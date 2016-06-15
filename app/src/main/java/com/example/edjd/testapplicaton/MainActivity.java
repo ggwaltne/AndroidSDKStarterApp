@@ -13,14 +13,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        text=new TextView(this);
-        text=(TextView)findViewById(R.id.text);
-
     }
-
-    public void OnClick (View view) {
-            text.setText("It's Alive!!!");
-
-    }
-
 }
