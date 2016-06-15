@@ -2,6 +2,7 @@ package com.example.edjd.testapplicaton;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.widget.GridLayout;
 import android.widget.Space;
 import android.widget.TextView;
+
+import java.util.Map;
 
 
 /**
@@ -124,46 +127,61 @@ public class LeaderBoard extends AppCompatActivity {
         String[] players = {"Jeff","Gage","Tessa","Robert","John","Kevin","Nick","Angie","Wilma"};
         String[] scores = {"1344","4334","3223","4645","0","5844","234","33","44"};
 
+        DataBaseWrapper mDbHelper = new DataBaseWrapper(getBaseContext());
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        DataAccess da = new DataAccess();
+        Map<String, Long> scoreBoard = da.readScoreboard(db);
+
         gridLayout.removeAllViews();
 
         int rowCount = players.length;
+        rowCount = scoreBoard.size();
 
         int column = 3;
         gridLayout.setColumnCount(column);
         gridLayout.setRowCount(rowCount + 1);
-        for (int i = 0; i < rowCount; i++) {
+        int rankNum = 0;
+        int row = 0;
 
-            String rank = String.valueOf(i+1);
+        for (Map.Entry<String, Long> entry : scoreBoard.entrySet()) {
+            System.out.println("Item : " + entry.getKey() + " Count : " + entry.getValue());
+//        }
+//        for (int i = 0; i < rowCount; i++) {
+            rankNum++;
+            String rank = String.valueOf(rankNum);
             TextView txtName = new TextView(this);
-            txtName.setText(rank + ") " + players[i]);
+            txtName.setText(rank + ") " + entry.getKey());
+//            txtName.setText(rank + ") " + scoreBoard.key);
             txtName.setTextColor(Color.WHITE);
 
             GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams();
-            gridParam.rowSpec = GridLayout.spec(i);
+            gridParam.rowSpec = GridLayout.spec(row);
             gridParam.columnSpec = GridLayout.spec(0);
             gridParam.setGravity(Gravity.LEFT);
             txtName.setLayoutParams(gridParam);
-            txtName.setTextSize(60);
+            txtName.setTextSize(30);
             gridLayout.addView(txtName);
 
             Space spacer = new Space(this);
             gridParam = new GridLayout.LayoutParams();
-            gridParam.rowSpec = GridLayout.spec(i);
+            gridParam.rowSpec = GridLayout.spec(row);
             gridParam.columnSpec = GridLayout.spec(1);
             spacer.setLayoutParams(gridParam);
             gridLayout.addView(spacer);
 
             TextView txtScore = new TextView(this);
-            txtScore.setText(scores[i]);
+            txtScore.setText(String.valueOf(entry.getValue()));
             txtScore.setTextColor(Color.WHITE);
 
             gridParam = new GridLayout.LayoutParams();
-            gridParam.rowSpec = GridLayout.spec(i);
+            gridParam.rowSpec = GridLayout.spec(row);
             gridParam.columnSpec = GridLayout.spec(2);
             gridParam.setGravity(Gravity.RIGHT);
             txtScore.setLayoutParams(gridParam);
-            txtScore.setTextSize(60);
+            txtScore.setTextSize(30);
             gridLayout.addView(txtScore);
+
+            row++;
         }
     }
 
