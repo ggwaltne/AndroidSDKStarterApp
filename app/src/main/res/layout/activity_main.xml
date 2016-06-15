@@ -19,7 +19,8 @@
         android:textSize="90px"
         android:textColor="#ffffff"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="OnClickGame" />
 
     <TextView
         android:layout_width="wrap_content"

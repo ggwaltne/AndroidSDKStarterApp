@@ -9,17 +9,23 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Intent i;
+    Intent LeaderBoard;
+    Intent Game;
     TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        i = new Intent(getApplicationContext(), LeaderBoard.class);
+        LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
+        Game = new Intent(getApplicationContext(), ActivityGame.class);
 
     }
     public void OnClickLeaderBoard (View view) {
-        startActivity(i);
+        startActivity(LeaderBoard);
+    }
+
+    public void OnClickGame(View view) {
+        startActivity(Game);
     }
 
 
