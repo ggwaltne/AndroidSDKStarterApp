@@ -23,30 +23,13 @@ public class DataAccess {
         scoreID = results.getLong(0);
         return scoreID;
     }
-    public void addScore(SQLiteDatabase db, long score, long user_id) {
-/*
-// Gets the data repository in write mode
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-// Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(FeedEntry.COLUMN_NAME_ENTRY_ID, id);
-        values.put(FeedEntry.COLUMN_NAME_TITLE, title);
-        values.put(FeedEntry.COLUMN_NAME_CONTENT, content);
-
-// Insert the new row, returning the primary key value of the new row
-        long newRowId;
-        newRowId = db.insert(
-                FeedEntry.TABLE_NAME,
-                FeedEntry.COLUMN_NAME_NULLABLE,
-                values);
-
+    public void addScore(SQLiteDatabase db, long score_value, long user_id) {
         ContentValues score = new ContentValues();
-        score.put();
-        score.put();
-        score.put();
-        score.put();
-*/
+        score.put("score_id", this.nextScoreID(db));
+        score.put("game_id", "101");
+        score.put("user_id", user_id);
+        score.put("score_value", score_value);
+        score.put("score_date", "2016-06-15");
     }
     public Map readScoreboard(SQLiteDatabase db) {
         Map scoreboard = new HashMap();
