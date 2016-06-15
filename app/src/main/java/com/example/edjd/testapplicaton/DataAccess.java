@@ -17,7 +17,7 @@ public class DataAccess {
 
     private long nextScoreID(SQLiteDatabase db) {
         long scoreID;
-        String query = "SELECT coalesce(select MAX(CAST(score_id as integer)) + 1 from score), 1)";
+        String query = "SELECT MAX(CAST(score_id as integer)) + 1 FROM score;";
         Cursor results = db.rawQuery(query, null);
         results.moveToFirst();
         scoreID = results.getLong(0);
