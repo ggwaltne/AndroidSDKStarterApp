@@ -8,6 +8,8 @@ import android.view.View;
 public class GameActivity extends AppCompatActivity {
 
     Intent LeaderBoard;
+    int differencesFound = 0;
+    int maxDifferences = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,7 +17,7 @@ public class GameActivity extends AppCompatActivity {
         LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
     }
 
-    public void OnClickGameOver (View view) {
+    public void goToGameOver (View view) {
         startActivity(LeaderBoard);
     }
 }
