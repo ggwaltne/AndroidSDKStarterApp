@@ -19,11 +19,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Game Over"
+            android:text="You Won!"
             android:id="@+id/gameovertxt"
+            android:layout_marginTop="66dp"
+            android:layout_marginLeft="63dp"
+            android:layout_marginStart="63dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="38dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,28 +34,51 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Score"
             android:id="@+id/scoretxt"
+            android:layout_marginTop="39dp"
             android:layout_below="@+id/gameovertxt"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="37dp" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sfAdButton"
-            android:src="@drawable/sfad"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignLeft="@+id/gameovertxt"
+            android:layout_alignStart="@+id/gameovertxt" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/score"
+            android:text="Rating"
+            android:id="@+id/rating"
             android:autoText="false"
             android:textColor="#ffffff"
+            android:layout_marginTop="40dp"
             android:layout_below="@+id/scoretxt"
-            android:layout_alignLeft="@+id/gameovertxt"
-            android:layout_alignStart="@+id/gameovertxt" />
+            android:layout_alignLeft="@+id/scoretxt"
+            android:layout_alignStart="@+id/scoretxt" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton4"
+            android:src="@drawable/rename"
+            android:layout_alignTop="@+id/imageButton5"
+            android:layout_toRightOf="@+id/imageButton5"
+            android:layout_toEndOf="@+id/imageButton5" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton5"
+            android:src="@drawable/sfaddred2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/gameovertxt"
+            android:layout_alignEnd="@+id/gameovertxt"
+            android:layout_marginBottom="55dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton6"
+            android:src="@drawable/warrantylogo2"
+            android:layout_alignBottom="@+id/imageButton5"
+            android:layout_toRightOf="@+id/gameovertxt"
+            android:layout_toEndOf="@+id/gameovertxt" />
+
     </RelativeLayout>
 </RelativeLayout>
