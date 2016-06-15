@@ -2,12 +2,18 @@ package com.example.edjd.testapplicaton;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.GridLayout;
+import android.widget.Space;
+import android.widget.TextView;
+
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -92,6 +98,9 @@ public class LeaderBoard extends AppCompatActivity {
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
+
+        loadGrid();
+
 //        mContentView = findViewById(R.id.fullscreen_content);
 
 
@@ -107,6 +116,55 @@ public class LeaderBoard extends AppCompatActivity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
 //        findViewById(R.id.btnBack).setOnTouchListener(mDelayHideTouchListener);
+    }
+
+    private void loadGrid() {
+        GridLayout gridLayout = (GridLayout) findViewById(R.id.grdScores);
+
+        String[] players = {"Jeff","Gage","Tessa","Robert","John","Kevin","Nick","Angie","Wilma"};
+        String[] scores = {"1344","4334","3223","4645","0","5844","234","33","44"};
+
+        gridLayout.removeAllViews();
+
+        int rowCount = players.length;
+
+        int column = 3;
+        gridLayout.setColumnCount(column);
+        gridLayout.setRowCount(rowCount + 1);
+        for (int i = 0; i < rowCount; i++) {
+
+            String rank = String.valueOf(i+1);
+            TextView txtName = new TextView(this);
+            txtName.setText(rank + ") " + players[i]);
+            txtName.setTextColor(Color.WHITE);
+
+            GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams();
+            gridParam.rowSpec = GridLayout.spec(i);
+            gridParam.columnSpec = GridLayout.spec(0);
+            gridParam.setGravity(Gravity.LEFT);
+            txtName.setLayoutParams(gridParam);
+            txtName.setTextSize(60);
+            gridLayout.addView(txtName);
+
+            Space spacer = new Space(this);
+            gridParam = new GridLayout.LayoutParams();
+            gridParam.rowSpec = GridLayout.spec(i);
+            gridParam.columnSpec = GridLayout.spec(1);
+            spacer.setLayoutParams(gridParam);
+            gridLayout.addView(spacer);
+
+            TextView txtScore = new TextView(this);
+            txtScore.setText(scores[i]);
+            txtScore.setTextColor(Color.WHITE);
+
+            gridParam = new GridLayout.LayoutParams();
+            gridParam.rowSpec = GridLayout.spec(i);
+            gridParam.columnSpec = GridLayout.spec(2);
+            gridParam.setGravity(Gravity.RIGHT);
+            txtScore.setLayoutParams(gridParam);
+            txtScore.setTextSize(60);
+            gridLayout.addView(txtScore);
+        }
     }
 
     @Override
@@ -133,12 +191,6 @@ public class LeaderBoard extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
-//        mControlsView.setVisibility(View.GONE);
-//        mVisible = false;
-//
-//        // Schedule a runnable to remove the status and navigation bar after a delay
-//        mHideHandler.removeCallbacks(mShowPart2Runnable);
-//        mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
     }
 
     @SuppressLint("InlinedApi")
