@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
-        Game = new Intent(getApplicationContext(), ActivityGame.class);
+        Game = new Intent(getApplicationContext(), GameActivity.class);
 
     }
     public void OnClickLeaderBoard (View view) {
