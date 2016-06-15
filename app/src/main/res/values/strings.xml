@@ -6,8 +6,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_activity_game">ActivityGame</string>
     <string name="title_activity_game_over">GameOverActivity</string>
-    <string name="sfvideo.png">sfvideo.png</string>
-    <string name="sfvideo_png">C:DevAndroidSDKStarterAppappsrcmainresdrawablesfvideo.png</string>
     <string name="sfadvideo">sfadvideo</string>
     <string name="sfvideo">sfVideo</string>
     <string name="game_over">Game Over!</string>
