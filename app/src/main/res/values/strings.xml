@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Test Applicaton</string>
+    <string name="app_name">Gage\'s Juice Bar</string>
+
+    <string name="title_activity_leader_board">Leader Board</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

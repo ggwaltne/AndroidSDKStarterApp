@@ -8,14 +8,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.edjd.testapplicaton.MainActivity"
-    android:background="#FF0000">
+    android:background="#CC0717">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="PLAY"
-        android:id="@+id/textView"
+        android:id="@+id/Play_Button"
         android:textSize="90px"
         android:textColor="#ffffff"
         android:layout_centerVertical="true"
@@ -26,11 +26,12 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="LEADERBOARD"
-        android:id="@+id/textView2"
+        android:id="@+id/Leaderboard_Button"
         android:textSize="90px"
         android:textColor="#ffffff"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/Play_Button"
+        android:layout_centerHorizontal="true"
+        android:onClick="OnClickLeaderBoard" />
 
     <TextView
         android:layout_width="wrap_content"
