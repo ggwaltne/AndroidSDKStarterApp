@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     Intent LeaderBoard;
     Intent Game;
+    Intent AdPage;
     TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
         Game = new Intent(getApplicationContext(), GameActivity.class);
+        AdPage = new Intent(getApplicationContext(), LeaderBoard.class);
 
     }
     public void OnClickLeaderBoard (View view) {
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void OnClickGame(View view) {
         startActivity(Game);
+    }
+
+    public void OnClickAd(View view) {
+        startActivity(AdPage);
     }
 
 
