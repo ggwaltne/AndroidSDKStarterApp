@@ -129,10 +129,10 @@ public class LeaderBoard extends AppCompatActivity {
 
     private void hide() {
         // Hide UI first
-//        ActionBar actionBar = getSupportActionBar();
-//        if (actionBar != null) {
-//            actionBar.hide();
-//        }
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
 //        mControlsView.setVisibility(View.GONE);
 //        mVisible = false;
 //

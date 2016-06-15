@@ -6,14 +6,22 @@
     android:orientation="vertical"
     tools:context="com.example.edjd.testapplicaton.LeaderBoard">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/sflogo"
+             />
+    </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:paddingTop="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
