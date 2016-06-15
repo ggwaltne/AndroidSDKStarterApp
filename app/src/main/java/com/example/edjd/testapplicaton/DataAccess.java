@@ -8,6 +8,8 @@ import android.provider.BaseColumns;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * Created by robertmatthewcook on 6/15/2016.
@@ -64,7 +66,9 @@ public class DataAccess {
     }
     public Map readScoreboard(SQLiteDatabase db, String score_date) {
         long rank=1;
-        Map scoreboard = new HashMap();
+        Map map = new HashMap();
+        SortedMap scoreboard = new TreeMap(map);
+
         String query = "SELECT user.user_name, score.score_value FROM score JOIN user ON user.user_id = score.user_id WHERE score.game_id = '101' AND score.score_date = '" + score_date + "' ORDER BY score.score_value DESC, user.user_name";
         Cursor results = db.rawQuery(query, null);
         if (results.moveToFirst()) {
