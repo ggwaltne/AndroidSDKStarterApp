@@ -128,6 +128,7 @@ public class LeaderBoard extends AppCompatActivity {
         String[] players = {"Jeff","Gage","Tessa","Robert","John","Kevin","Nick","Angie","Wilma"};
         String[] scores = {"1344","4334","3223","4645","0","5844","234","33","44"};
 
+
         DataBaseWrapper mDbHelper = new DataBaseWrapper(getBaseContext());
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         DataAccess da = new DataAccess();
@@ -143,6 +144,11 @@ public class LeaderBoard extends AppCompatActivity {
         gridLayout.setRowCount(rowCount + 1);
         int rankNum = 0;
         int row = 0;
+
+        String ourHiScore = "0";
+        String ourRank = "0";
+
+        //sort the scoreboard by running it through
         Map<Long, String[]> treeMap = new TreeMap<Long, String[]>(scoreBoard);
 
         for (Map.Entry<Long, String[]> entry : treeMap.entrySet()) {
@@ -151,10 +157,23 @@ public class LeaderBoard extends AppCompatActivity {
 //        for (int i = 0; i < rowCount; i++) {
             rankNum++;
             String rank = String.valueOf(rankNum);
+            String userName = entry.getValue()[0];
+            boolean isThisUs = false;
+            if (MainActivity.USER_NAME.equals(userName)) {
+                ourHiScore = String.valueOf(entry.getValue()[1]);
+                ourRank = rank;
+                isThisUs=true;
+            }
+
             TextView txtName = new TextView(this);
-            txtName.setText(entry.getKey() + ") " + entry.getValue()[0]);
+            txtName.setText(entry.getKey() + ") " + userName);
 //            txtName.setText(rank + ") " + scoreBoard.key);
+
             txtName.setTextColor(Color.WHITE);
+            if (isThisUs) {
+                txtName.setTextColor(Color.RED);
+                txtName.setBackgroundColor(Color.WHITE);
+            }
 
             GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams();
             gridParam.rowSpec = GridLayout.spec(row);
@@ -174,6 +193,10 @@ public class LeaderBoard extends AppCompatActivity {
             TextView txtScore = new TextView(this);
             txtScore.setText(String.valueOf(entry.getValue()[1]));
             txtScore.setTextColor(Color.WHITE);
+            if (isThisUs) {
+                txtScore.setTextColor(Color.RED);
+                txtScore.setBackgroundColor(Color.WHITE);
+            }
 
             gridParam = new GridLayout.LayoutParams();
             gridParam.rowSpec = GridLayout.spec(row);
@@ -185,6 +208,12 @@ public class LeaderBoard extends AppCompatActivity {
 
             row++;
         }
+
+        TextView hiScore = (TextView) findViewById(R.id.lblHiScore);
+        hiScore.setText("Your High: " + ourHiScore);
+        TextView oRank = (TextView) findViewById(R.id.lblRank);
+        oRank.setText("Your Rank: " + ourRank);
+
     }
 
     @Override
