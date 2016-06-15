@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#cc0717"
     tools:context="com.example.edjd.testapplicaton.LeaderBoard">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -14,10 +14,11 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:keepScreenOn="true"
-        android:text="@string/dummy_content"
+        android:text="Bunch of Leaders"
         android:textColor="#33b5e5"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="#cc0717"/>
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
@@ -32,48 +33,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
+            android:background="#cc0717"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <Button
-                android:id="@+id/dummy_button"
+                android:id="@+id/btnBack"
                 style="?metaButtonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/dummy_button" />
+                android:text="Back"
+                android:textSize="60sp"
+                android:background="#FFFFFF"
+                android:onClick="OnClickBack"/>
 
         </LinearLayout>
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="right|top"
-            android:rowCount="1"
-            android:columnCount="2"
-            android:orientation="horizontal"
-            android:background="#cc0717"></GridLayout>
+
     </FrameLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hi Score"
+        android:text="Your High Score: 2201"
         android:id="@+id/lblHiScore"
         android:layout_gravity="left|top"
-        android:textSize="128px"
+        android:textSize="64px"
         android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="183"
+        android:text="Your Rank: 183"
         android:id="@+id/lblRank"
         android:layout_gravity="right|top"
-        android:textSize="128px"
+        android:textSize="64px"
         android:textColor="@android:color/white" />
 
 </FrameLayout>

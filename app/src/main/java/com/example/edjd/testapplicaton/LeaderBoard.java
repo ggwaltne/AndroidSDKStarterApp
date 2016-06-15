@@ -1,6 +1,7 @@
 package com.example.edjd.testapplicaton;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -105,7 +106,7 @@ public class LeaderBoard extends AppCompatActivity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.btnBack).setOnTouchListener(mDelayHideTouchListener);
     }
 
     @Override
@@ -159,5 +160,9 @@ public class LeaderBoard extends AppCompatActivity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    public void OnClickBack(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 }
