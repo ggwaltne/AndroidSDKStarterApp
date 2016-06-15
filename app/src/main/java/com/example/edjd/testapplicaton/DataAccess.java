@@ -17,6 +17,23 @@ import java.util.TreeMap;
 
 public class DataAccess {
 
+    private long nextUserID(SQLiteDatabase db) {
+        long user_id;
+        String query = "SELECT MAX(CAST(user_id AS integer)) + 1 FROM user;";
+        Cursor results = db.rawQuery(query, null);
+        results.moveToFirst();
+        user_id = results.getLong(0);
+        return user_id;
+    }
+    public void addUser(SQLiteDatabase db, String user_name) {
+        ContentValues user = new ContentValues();
+        user.put("user_id", this.nextListingID(db));
+        user.put("user_name", user_name);
+        user.put("user_email", user_name+"@fake.it");
+        user.put("user_create_date", "2016-06-15");
+        user.put("user_verified_date", "2016-06-15");
+        db.insert("listing", null, user);
+    }
     private long nextListingID(SQLiteDatabase db) {
         long listing_id;
         String query = "SELECT MAX(CAST(listing_id AS integer)) + 1 FROM listing;";
@@ -65,14 +82,11 @@ public class DataAccess {
         db.insert("score", null, score);
     }
     public Map readScoreboard(SQLiteDatabase db) {
-        return this.readScoreboard(db,"2016-06-14");
-    }
-    public Map readScoreboard(SQLiteDatabase db, String score_date) {
         long rank=1;
         Map map = new HashMap();
         SortedMap scoreboard = new TreeMap(map);
 
-        String query = "SELECT user.user_name, score.score_value FROM score JOIN user ON user.user_id = score.user_id WHERE score.game_id = '101' AND score.score_date = '" + score_date + "' ORDER BY score.score_value DESC, user.user_name";
+        String query = "SELECT user.user_name, score.score_value FROM score JOIN user ON user.user_id = score.user_id WHERE score.game_id = '101' ORDER BY score.score_value DESC, user.user_name";
         Cursor results = db.rawQuery(query, null);
         if (results.moveToFirst()) {
             do {
