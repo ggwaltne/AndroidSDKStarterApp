@@ -1,12 +1,9 @@
 package com.example.edjd.testapplicaton;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Handler;
-import android.provider.BaseColumns;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Intent Game;
     Intent AdPage;
     TextView text;
+    public static final String USER_NAME = "UserTwo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
