@@ -9,7 +9,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.edjd.testapplicaton.MainActivity"
     android:background="#CC0717">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/sflogo"
+            />
+    </FrameLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,7 +74,8 @@
         android:src="@drawable/adcontenttest"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="OnClickAdd" />
 
     <ImageView
         android:layout_width="wrap_content"

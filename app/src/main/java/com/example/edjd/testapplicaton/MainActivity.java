@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     Intent LeaderBoard;
     Intent Game;
+    Intent AdPage;
     TextView text;
 
     /* Inner class that defines the table contents */
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
         Game = new Intent(getApplicationContext(), GameActivity.class);
+        AdPage = new Intent(getApplicationContext(), LeaderBoard.class);
 
     }
     public void OnClickLeaderBoard (View view) {
@@ -58,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void OnClickGame(View view) {
         startActivity(Game);
+    }
+
+    public void OnClickAd(View view) {
+        startActivity(AdPage);
     }
 
 

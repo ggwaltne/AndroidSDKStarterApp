@@ -1,32 +1,74 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="#cc0717"
+    android:orientation="vertical"
     tools:context="com.example.edjd.testapplicaton.LeaderBoard">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-    <TextView
-        android:id="@+id/fullscreen_content"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="Bunch of Leaders"
-        android:textColor="#33b5e5"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:background="#cc0717"/>
+        android:layout_height="wrap_content">
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/sflogo"
+             />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Your High Score: 2201"
+            android:id="@+id/lblHiScore"
+            android:layout_gravity="left|top"
+            android:textSize="64px"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Rank: 183"
+            android:id="@+id/lblRank"
+            android:layout_gravity="right|top"
+            android:textSize="64px"
+            android:textColor="@android:color/white" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:orientation="vertical"
+            android:textColor="#FFFFFF">
+            <TextView
+                android:layout_row="0"
+                android:layout_column="0"
+                android:text="Product Code:"  />
+            <TextView
+                android:layout_row="0"
+                android:layout_column="1"
+                android:text="Gage\s juice joint"  />
+        </GridLayout>
+    </FrameLayout>
+
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
-
         <LinearLayout
             android:id="@+id/fullscreen_content_controls"
             style="?metaButtonBarStyle"
@@ -49,28 +91,5 @@
                 android:onClick="OnClickBack"/>
 
         </LinearLayout>
-
-
     </FrameLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your High Score: 2201"
-        android:id="@+id/lblHiScore"
-        android:layout_gravity="left|top"
-        android:textSize="64px"
-        android:textColor="@android:color/white" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Rank: 183"
-        android:id="@+id/lblRank"
-        android:layout_gravity="right|top"
-        android:textSize="64px"
-        android:textColor="@android:color/white" />
-
-</FrameLayout>
+</LinearLayout>
