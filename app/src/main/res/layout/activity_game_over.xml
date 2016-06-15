@@ -42,5 +42,17 @@
             android:src="@drawable/sfad"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/score"
+            android:autoText="false"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/scoretxt"
+            android:layout_alignLeft="@+id/gameovertxt"
+            android:layout_alignStart="@+id/gameovertxt" />
     </RelativeLayout>
 </RelativeLayout>

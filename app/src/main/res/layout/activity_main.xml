@@ -28,9 +28,10 @@
         android:id="@+id/Play_Button"
         android:textSize="90px"
         android:textColor="#ffffff"
-        android:layout_centerVertical="true"
+        android:onClick="OnClickGame"
+        android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:onClick="OnClickGame" />
+        android:layout_marginTop="134dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,9 +41,9 @@
         android:id="@+id/Leaderboard_Button"
         android:textSize="90px"
         android:textColor="#ffffff"
+        android:onClick="OnClickLeaderBoard"
         android:layout_below="@+id/Play_Button"
-        android:layout_centerHorizontal="true"
-        android:onClick="OnClickLeaderBoard" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,24 +67,5 @@
         android:layout_centerHorizontal="true"
         android:textSize="90px"
         android:textColor="#ffffff" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:src="@drawable/adcontenttest"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="OnClickAdd" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
-        android:src="@drawable/adcontenttest"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
