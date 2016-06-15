@@ -26,10 +26,11 @@ public class DataAccess {
         return listing_id;
     }
     public void addListing(SQLiteDatabase db, long advertisement_id) {
-        ContentValues score = new ContentValues();
-        score.put("listing_id", this.nextListingID(db));
-        score.put("advertisement_id", advertisement_id);
-        score.put("listing_date", "2016-06-15");
+        ContentValues listing = new ContentValues();
+        listing.put("listing_id", this.nextListingID(db));
+        listing.put("advertisement_id", advertisement_id);
+        listing.put("listing_date", "2016-06-15");
+        db.insert("listing", null, listing);
     }
     private long nextClickID(SQLiteDatabase db) {
         long click_id;
@@ -40,10 +41,11 @@ public class DataAccess {
         return click_id;
     }
     public void addClick(SQLiteDatabase db, long listing_id) {
-        ContentValues score = new ContentValues();
-        score.put("click_id", this.nextClickID(db));
-        score.put("advertisement_id", listing_id);
-        score.put("listing_date", "2016-06-15");
+        ContentValues click = new ContentValues();
+        click.put("click_id", this.nextClickID(db));
+        click.put("advertisement_id", listing_id);
+        click.put("listing_date", "2016-06-15");
+        db.insert("click", null, click);
     }
     private long nextScoreID(SQLiteDatabase db) {
         long score_id;
@@ -60,7 +62,6 @@ public class DataAccess {
         score.put("user_id", user_id);
         score.put("score_value", score_value);
         score.put("score_date", "2016-06-15");
-
         db.insert("score", null, score);
     }
     public Map readScoreboard(SQLiteDatabase db) {
