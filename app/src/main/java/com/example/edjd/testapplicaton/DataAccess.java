@@ -60,6 +60,8 @@ public class DataAccess {
         score.put("user_id", user_id);
         score.put("score_value", score_value);
         score.put("score_date", "2016-06-15");
+
+        db.insert("score", null, score);
     }
     public Map readScoreboard(SQLiteDatabase db) {
         return this.readScoreboard(db,"2016-06-14");
