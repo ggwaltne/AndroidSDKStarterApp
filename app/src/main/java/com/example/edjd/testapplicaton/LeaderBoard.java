@@ -16,6 +16,7 @@ import android.widget.Space;
 import android.widget.TextView;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 
 /**
@@ -130,7 +131,7 @@ public class LeaderBoard extends AppCompatActivity {
         DataBaseWrapper mDbHelper = new DataBaseWrapper(getBaseContext());
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         DataAccess da = new DataAccess();
-        Map<String, Long> scoreBoard = da.readScoreboard(db);
+        Map<Long, String[]> scoreBoard = da.readScoreboard(db);
 
         gridLayout.removeAllViews();
 
@@ -142,15 +143,16 @@ public class LeaderBoard extends AppCompatActivity {
         gridLayout.setRowCount(rowCount + 1);
         int rankNum = 0;
         int row = 0;
+        Map<Long, String[]> treeMap = new TreeMap<Long, String[]>(scoreBoard);
 
-        for (Map.Entry<String, Long> entry : scoreBoard.entrySet()) {
+        for (Map.Entry<Long, String[]> entry : treeMap.entrySet()) {
             System.out.println("Item : " + entry.getKey() + " Count : " + entry.getValue());
 //        }
 //        for (int i = 0; i < rowCount; i++) {
             rankNum++;
             String rank = String.valueOf(rankNum);
             TextView txtName = new TextView(this);
-            txtName.setText(rank + ") " + entry.getKey());
+            txtName.setText(entry.getKey() + ") " + entry.getValue()[0]);
 //            txtName.setText(rank + ") " + scoreBoard.key);
             txtName.setTextColor(Color.WHITE);
 
@@ -170,7 +172,7 @@ public class LeaderBoard extends AppCompatActivity {
             gridLayout.addView(spacer);
 
             TextView txtScore = new TextView(this);
-            txtScore.setText(String.valueOf(entry.getValue()));
+            txtScore.setText(String.valueOf(entry.getValue()[1]));
             txtScore.setTextColor(Color.WHITE);
 
             gridParam = new GridLayout.LayoutParams();
