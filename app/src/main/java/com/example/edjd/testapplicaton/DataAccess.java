@@ -63,12 +63,16 @@ public class DataAccess {
         return this.readScoreboard(db,"2016-06-14");
     }
     public Map readScoreboard(SQLiteDatabase db, String score_date) {
+        long rank=1;
         Map scoreboard = new HashMap();
         String query = "SELECT user.user_name, score.score_value FROM score JOIN user ON user.user_id = score.user_id WHERE score.game_id = '101' AND score.score_date = '" + score_date + "' ORDER BY score.score_value DESC, user.user_name";
         Cursor results = db.rawQuery(query, null);
         if (results.moveToFirst()) {
             do {
-                scoreboard.put(results.getString(0), results.getLong(1));;
+                String[] arrValues = {results.getString(0), results.getString(1)};
+                scoreboard.put(rank++, arrValues);
+
+                //scoreboard.put(results.getString(0), results.getLong(1));;
             } while (results.moveToNext());
         }
         return scoreboard;
