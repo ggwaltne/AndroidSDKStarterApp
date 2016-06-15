@@ -23,6 +23,12 @@ public class DataAccess {
         listing_id = results.getLong(0);
         return listing_id;
     }
+    public void addListing(SQLiteDatabase db, long advertisement_id) {
+        ContentValues score = new ContentValues();
+        score.put("listing_id", this.nextListingID(db));
+        score.put("advertisement_id", advertisement_id);
+        score.put("listing_date", "2016-06-15");
+    }
     private long nextClickID(SQLiteDatabase db) {
         long click_id;
         String query = "SELECT MAX(CAST(click_id AS integer)) + 1 FROM click;";
@@ -30,6 +36,12 @@ public class DataAccess {
         results.moveToFirst();
         click_id = results.getLong(0);
         return click_id;
+    }
+    public void addClick(SQLiteDatabase db, long listing_id) {
+        ContentValues score = new ContentValues();
+        score.put("click_id", this.nextClickID(db));
+        score.put("advertisement_id", listing_id);
+        score.put("listing_date", "2016-06-15");
     }
     private long nextScoreID(SQLiteDatabase db) {
         long score_id;
@@ -48,8 +60,11 @@ public class DataAccess {
         score.put("score_date", "2016-06-15");
     }
     public Map readScoreboard(SQLiteDatabase db) {
+        return this.readScoreboard(db,"2016-06-14");
+    }
+    public Map readScoreboard(SQLiteDatabase db, String score_date) {
         Map scoreboard = new HashMap();
-        String query = "SELECT user.user_name, score.score_value FROM score JOIN user ON user.user_id = score.user_id WHERE score.game_id = '101' AND score.score_date = '2016-06-14' ORDER BY score.score_value DESC, user.user_name";
+        String query = "SELECT user.user_name, score.score_value FROM score JOIN user ON user.user_id = score.user_id WHERE score.game_id = '101' AND score.score_date = '" + score_date + "' ORDER BY score.score_value DESC, user.user_name";
         Cursor results = db.rawQuery(query, null);
         if (results.moveToFirst()) {
             do {
