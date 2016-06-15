@@ -7,6 +7,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.edjd.testapplicaton.GameActivity">
+    tools:context="com.example.edjd.testapplicaton.GameActivity"
+    android:background="#CC0717">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DIE Quickly!!"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:layout_alignParentStart="false"
+        android:nestedScrollingEnabled="true"
+        android:onClick="OnClickGameOver" />
 </RelativeLayout>
