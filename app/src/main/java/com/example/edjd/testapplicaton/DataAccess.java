@@ -32,6 +32,7 @@ public class DataAccess {
         user.put("user_email", user_name+"@fake.it");
         user.put("user_create_date", "2016-06-15");
         user.put("user_verified_date", "2016-06-15");
+        user.put("user_deactivated_date", "");
         db.insert("user", null, user);
     }
     private long nextListingID(SQLiteDatabase db) {
