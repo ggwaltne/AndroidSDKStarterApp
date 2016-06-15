@@ -15,13 +15,29 @@ import java.util.Map;
 
 public class DataAccess {
 
-    private long nextScoreID(SQLiteDatabase db) {
-        long scoreID;
-        String query = "SELECT MAX(CAST(score_id as integer)) + 1 FROM score;";
+    private long nextListingID(SQLiteDatabase db) {
+        long listing_id;
+        String query = "SELECT MAX(CAST(listing_id AS integer)) + 1 FROM listing;";
         Cursor results = db.rawQuery(query, null);
         results.moveToFirst();
-        scoreID = results.getLong(0);
-        return scoreID;
+        listing_id = results.getLong(0);
+        return listing_id;
+    }
+    private long nextClickID(SQLiteDatabase db) {
+        long click_id;
+        String query = "SELECT MAX(CAST(click_id AS integer)) + 1 FROM click;";
+        Cursor results = db.rawQuery(query, null);
+        results.moveToFirst();
+        click_id = results.getLong(0);
+        return click_id;
+    }
+    private long nextScoreID(SQLiteDatabase db) {
+        long score_id;
+        String query = "SELECT MAX(CAST(score_id AS integer)) + 1 FROM score;";
+        Cursor results = db.rawQuery(query, null);
+        results.moveToFirst();
+        score_id = results.getLong(0);
+        return score_id;
     }
     public void addScore(SQLiteDatabase db, long score_value, long user_id) {
         ContentValues score = new ContentValues();
