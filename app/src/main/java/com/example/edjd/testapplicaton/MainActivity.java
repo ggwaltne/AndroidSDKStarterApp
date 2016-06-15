@@ -2,7 +2,6 @@ package com.example.edjd.testapplicaton;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     Intent LeaderBoard;
     Intent Game;
+    Intent AdPage;
     TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
         Game = new Intent(getApplicationContext(), GameActivity.class);
+        AdPage = new Intent(getApplicationContext(), LeaderBoard.class);
 
     }
     public void OnClickLeaderBoard (View view) {
@@ -29,11 +30,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Game);
     }
 
-    private void hide() {
-        // Hide UI first
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
+    public void OnClickAd(View view) {
+        startActivity(AdPage);
     }
+
+
 }

@@ -8,17 +8,52 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.edjd.testapplicaton.GameActivity"
-    android:background="#CC0717">
+    android:background="#CC0717"><![CDATA[
 
-    <Button
+
+
+    TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DIE Quickly!!"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="SCORE:"
+        android:id="@+id/textView"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+]]>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="59dp"
-        android:layout_alignParentStart="false"
-        android:nestedScrollingEnabled="true"
-        android:onClick="OnClickGameOver" />
+        android:src="@drawable/composite_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Diffrences Found:"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:textColor="#ffffff" />
+
 </RelativeLayout>
