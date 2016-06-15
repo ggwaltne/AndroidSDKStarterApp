@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="NEW GAME!?!"
+        android:text="A Wild Zombie Appeared"
         android:id="@+id/text"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -22,7 +22,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Push ME!!"
+        android:text="Zap Zombie!!"
         android:id="@+id/button"
         android:contextClickable="false"
         android:clickable="true"
