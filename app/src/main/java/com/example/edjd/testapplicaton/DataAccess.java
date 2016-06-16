@@ -32,7 +32,8 @@ public class DataAccess {
         user.put("user_email", user_name+"@fake.it");
         user.put("user_create_date", "2016-06-15");
         user.put("user_verified_date", "2016-06-15");
-        db.insert("listing", null, user);
+        user.put("user_deactivated_date", "");
+        db.insert("user", null, user);
     }
     private long nextListingID(SQLiteDatabase db) {
         long listing_id;
@@ -78,7 +79,6 @@ public class DataAccess {
         score.put("game_id", "101");
         score.put("user_id", user_id);
         score.put("score_value", score_value);
-        score.put("score_date", "2016-06-15");
         db.insert("score", null, score);
     }
     public Map readScoreboard(SQLiteDatabase db) {
