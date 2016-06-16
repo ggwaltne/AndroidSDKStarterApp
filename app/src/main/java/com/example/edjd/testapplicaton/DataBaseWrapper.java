@@ -34,9 +34,6 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     public void onCreate(SQLiteDatabase db) {
-        this.dbTestBuild(db);
-    }
-    public void onOpen(SQLiteDatabase db) {
         this.dbDestroy(db);
         this.dbTestBuild(db);
     }
