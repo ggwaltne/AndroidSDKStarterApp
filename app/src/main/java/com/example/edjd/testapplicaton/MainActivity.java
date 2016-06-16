@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
         DataBaseWrapper mDbHelper = new DataBaseWrapper(getBaseContext());
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
-        mDbHelper.onUpgrade(db,0,0);
-        DataAccess da = new DataAccess();
-        da.dbInsertTestData(db);
+        //mDbHelper.onUpgrade(db,0,0);
+        //DataAccess da = new DataAccess();
+        //da.dbInsertTestData(db);
 
         LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
         Game = new Intent(getApplicationContext(), GameActivity.class);

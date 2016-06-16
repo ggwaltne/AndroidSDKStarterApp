@@ -264,6 +264,6 @@ public class LeaderBoard extends AppCompatActivity {
     }
 
     public void OnClickBack(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), YourSavingsActivity.class));
     }
 }
