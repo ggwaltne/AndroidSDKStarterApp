@@ -14,8 +14,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 //SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
 public class DataBaseWrapper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "GageJuiceBar.db";
+    public static final String DATABASE_NAME = "GagesJuiceBar.db";
     public static final int DATABASE_VERSION = 1;
+
+    private static final String SQL_DROP = "DROP TABLE IF EXISTS user; DROP TABLE IF EXISTS game; DROP TABLE IF EXISTS score; DROP TABLE IF EXISTS market; DROP TABLE IF EXISTS advertisement; DROP TABLE IF EXISTS advertisement_market; DROP TABLE IF EXISTS listing; DROP TABLE IF EXISTS click;";
 
     private static final String SQL_CREATE_USER = "CREATE TABLE IF NOT EXISTS user(user_id TEXT, user_name TEXT, user_email TEXT, user_create_date TEXT, user_verified_date TEXT, user_deactivated_date TEXT);";
     private static final String SQL_CREATE_GAME = "CREATE TABLE IF NOT EXISTS game(game_id TEXT, game_name TEXT, game_start_date TEXT, game_end_date TEXT);";
@@ -35,18 +37,13 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
     }
     public void onCreate(SQLiteDatabase db) {
         this.dbDestroy(db);
-        this.dbTestBuild(db);
+        this.dbBuild(db);
     }
 
     private void dbDestroy(SQLiteDatabase db){
-        String dropSQL;
-        String query = "select 'drop table ' || name || ';' from sqlite_master where type = 'table';";
-        Cursor results = db.rawQuery(query, null);
-        results.moveToFirst();
-        dropSQL = results.getString(0);
-        db.rawQuery(dropSQL, null);
+        db.rawQuery(SQL_DROP, null);
     }
-    private void dbTestBuild(SQLiteDatabase db) {
+    private void dbBuild(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USER);
         db.execSQL(SQL_CREATE_GAME);
         db.execSQL(SQL_CREATE_SCORE);
