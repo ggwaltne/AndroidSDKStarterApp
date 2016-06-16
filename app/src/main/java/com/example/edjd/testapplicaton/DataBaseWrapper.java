@@ -14,10 +14,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 //SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
 public class DataBaseWrapper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "GageJuiceBar.db";
+    public static final String DATABASE_NAME = "GagesJuiceBar.db";
     public static final int DATABASE_VERSION = 1;
 
-    private static final String SQL_DROP = "DROP TABLE user; DROP TABLE game; DROP TABLE score; DROP TABLE market; DROP TABLE advertisement; DROP TABLE advertisement_market; DROP TABLE listing; DROP TABLE click;";
+    private static final String SQL_DROP = "DROP TABLE IF EXISTS user; DROP TABLE IF EXISTS game; DROP TABLE IF EXISTS score; DROP TABLE IF EXISTS market; DROP TABLE IF EXISTS advertisement; DROP TABLE IF EXISTS advertisement_market; DROP TABLE IF EXISTS listing; DROP TABLE IF EXISTS click;";
 
     private static final String SQL_CREATE_USER = "CREATE TABLE IF NOT EXISTS user(user_id TEXT, user_name TEXT, user_email TEXT, user_create_date TEXT, user_verified_date TEXT, user_deactivated_date TEXT);";
     private static final String SQL_CREATE_GAME = "CREATE TABLE IF NOT EXISTS game(game_id TEXT, game_name TEXT, game_start_date TEXT, game_end_date TEXT);";
