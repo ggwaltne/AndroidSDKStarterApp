@@ -16,6 +16,8 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "GageJuiceBar.db";
     public static final int DATABASE_VERSION = 1;
 
+    private static final String SQL_DELETE_DATA = "DELETE FROM user;DELETE FROM game; DELETE FROM score; DELETE FROM market; DELETE FROM advertisement; DELETE FROM advertisement_market; DELETE FROM listing; DELETE FROM click;";
+
     private static final String SQL_CREATE_USER = "CREATE TABLE IF NOT EXISTS user(user_id TEXT, user_name TEXT, user_email TEXT, user_create_date TEXT, user_verified_date TEXT, user_deactivated_date TEXT);";
     private static final String SQL_CREATE_GAME = "CREATE TABLE IF NOT EXISTS game(game_id TEXT, game_name TEXT, game_start_date TEXT, game_end_date TEXT);";
     //private static final String SQL_CREATE_SCORE = "CREATE TABLE IF NOT EXISTS score(score_id TEXT, game_id TEXT, user_id TEXT, score_value INTEGER, score_date TEXT);";
@@ -47,9 +49,14 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_ADVERTISEMENT_MARKET);
         db.execSQL(SQL_CREATE_CLICK);
         db.execSQL(SQL_CREATE_LISTING);
+        this.doClearData(db);
         this.doPopulateData(db);
         this.doGenerateData(db);
     }
+    public void doClearData(SQLiteDatabase db) {
+        db.execSQL(SQL_DELETE_DATA);
+    }
+
     public void doPopulateData(SQLiteDatabase db) {
         db.execSQL(SQL_POPULATE_MARKET);
         db.execSQL(SQL_POPULATE_ADVERTISEMENT);
