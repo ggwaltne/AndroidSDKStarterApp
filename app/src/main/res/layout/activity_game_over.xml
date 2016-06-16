@@ -35,8 +35,10 @@
             android:textSize="70dp"
             android:textAlignment="center"
             android:layout_above="@+id/scoretxt"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="81dp" />
+            android:layout_alignRight="@+id/imageButton6"
+            android:layout_alignEnd="@+id/imageButton6"
+            android:layout_marginBottom="37dp"
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,11 +46,12 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Score:"
             android:id="@+id/scoretxt"
-            android:layout_marginBottom="79dp"
+            android:layout_marginBottom="127dp"
             android:textSize="40dp"
-            android:layout_above="@+id/imageButton4"
-            android:layout_toStartOf="@+id/score"
-            android:layout_toLeftOf="@+id/score" />
+            android:layout_above="@+id/imageButton5"
+            android:layout_toLeftOf="@+id/imageButton6"
+            android:layout_toStartOf="@+id/imageButton6"
+            android:textColor="#ffffff" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -65,11 +68,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageButton5"
             android:src="@drawable/sfaddred2"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="51dp"
             android:onClick="OnClickSFAd"
             android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/gameovertxt"
-            android:layout_alignStart="@+id/gameovertxt" />
+            android:layout_alignRight="@+id/scoretxt"
+            android:layout_alignEnd="@+id/scoretxt" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -78,8 +81,8 @@
             android:src="@drawable/warrantylogo2"
             android:onClick="OnClickAutoCare"
             android:nestedScrollingEnabled="false"
-            android:layout_marginRight="40dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginRight="38dp"
+            android:layout_marginEnd="38dp"
             android:layout_alignBottom="@+id/imageButton5"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -95,7 +98,20 @@
             android:textSize="40dp"
             android:layout_alignTop="@+id/scoretxt"
             android:layout_toRightOf="@+id/imageButton5"
-            android:layout_toEndOf="@+id/imageButton5" />
+            android:layout_toEndOf="@+id/imageButton5"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Move up the leaderboard after a short message"
+            android:id="@+id/textView2"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/imageButton4"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 </RelativeLayout>
