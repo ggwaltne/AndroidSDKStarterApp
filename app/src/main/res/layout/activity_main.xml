@@ -11,7 +11,8 @@
     android:background="#CC0717">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout">
 
         <ImageView
             android:layout_width="match_parent"
@@ -29,9 +30,8 @@
         android:textSize="90px"
         android:textColor="#ffffff"
         android:onClick="OnClickGame"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="134dp" />
+        android:layout_above="@+id/Leaderboard_Button"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,30 +42,20 @@
         android:textSize="90px"
         android:textColor="#ffffff"
         android:onClick="OnClickLeaderBoard"
-        android:layout_below="@+id/Play_Button"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="State Farm"
-        android:id="@+id/textView3"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
-        android:textSize="90px"
-        android:textColor="#ffffff" />
+        android:layout_marginBottom="100dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="The Video Game!"
+        android:text="Spot the Difference"
         android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:textSize="90px"
-        android:textColor="#ffffff" />
+        android:textSize="80px"
+        android:textColor="#ffffff"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/frameLayout"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
