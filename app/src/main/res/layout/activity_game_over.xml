@@ -32,36 +32,23 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="You Won!"
             android:id="@+id/gameovertxt"
-            android:layout_marginTop="66dp"
-            android:layout_marginLeft="63dp"
-            android:layout_marginStart="63dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textSize="70dp"
+            android:textAlignment="center"
+            android:layout_above="@+id/scoretxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="81dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Score"
+            android:text="Score:"
             android:id="@+id/scoretxt"
-            android:layout_marginTop="39dp"
-            android:layout_below="@+id/gameovertxt"
-            android:layout_alignLeft="@+id/gameovertxt"
-            android:layout_alignStart="@+id/gameovertxt" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Rating"
-            android:id="@+id/rating"
-            android:autoText="false"
-            android:textColor="#ffffff"
-            android:layout_marginTop="40dp"
-            android:layout_below="@+id/scoretxt"
-            android:layout_alignLeft="@+id/scoretxt"
-            android:layout_alignStart="@+id/scoretxt" />
+            android:layout_marginBottom="79dp"
+            android:textSize="40dp"
+            android:layout_above="@+id/imageButton4"
+            android:layout_toStartOf="@+id/score"
+            android:layout_toLeftOf="@+id/score" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -78,22 +65,24 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageButton5"
             android:src="@drawable/sfaddred2"
+            android:layout_marginBottom="56dp"
+            android:onClick="OnClickSFAd"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/gameovertxt"
-            android:layout_alignEnd="@+id/gameovertxt"
-            android:layout_marginBottom="55dp"
-            android:onClick="OnClickSFAd" />
+            android:layout_alignLeft="@+id/gameovertxt"
+            android:layout_alignStart="@+id/gameovertxt" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton6"
             android:src="@drawable/warrantylogo2"
-            android:layout_alignBottom="@+id/imageButton5"
-            android:layout_toRightOf="@+id/gameovertxt"
-            android:layout_toEndOf="@+id/gameovertxt"
             android:onClick="OnClickAutoCare"
-            android:nestedScrollingEnabled="false" />
+            android:nestedScrollingEnabled="false"
+            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_alignBottom="@+id/imageButton5"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -101,9 +90,12 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="0"
             android:id="@+id/score"
-            android:layout_below="@+id/scoretxt"
-            android:layout_alignLeft="@+id/scoretxt"
-            android:layout_alignStart="@+id/scoretxt" />
+            android:layout_marginLeft="47dp"
+            android:layout_marginStart="47dp"
+            android:textSize="40dp"
+            android:layout_alignTop="@+id/scoretxt"
+            android:layout_toRightOf="@+id/imageButton5"
+            android:layout_toEndOf="@+id/imageButton5" />
 
     </RelativeLayout>
 </RelativeLayout>
