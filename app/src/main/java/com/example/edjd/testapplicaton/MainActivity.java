@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         DataBaseWrapper mDbHelper = new DataBaseWrapper(getBaseContext());
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+        mDbHelper.onUpgrade(db,0,0);
+        DataAccess da = new DataAccess();
+        da.dbInsertTestData(db);
 
         LeaderBoard = new Intent(getApplicationContext(), LeaderBoard.class);
         Game = new Intent(getApplicationContext(), GameActivity.class);
