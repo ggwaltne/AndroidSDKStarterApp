@@ -126,7 +126,12 @@
         </GridLayout>
     </FrameLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
 
+    </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -147,8 +152,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Back"
-                android:textSize="60sp"
+                android:text="See Your Savings..."
+                android:textSize="40sp"
                 android:background="#FFFFFF"
                 android:onClick="OnClickBack"/>
 

@@ -11,8 +11,7 @@
     android:background="#CC0717">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/frameLayout">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="match_parent"
@@ -30,8 +29,9 @@
         android:textSize="90px"
         android:textColor="#ffffff"
         android:onClick="OnClickGame"
-        android:layout_above="@+id/Leaderboard_Button"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="134dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,20 +42,40 @@
         android:textSize="90px"
         android:textColor="#ffffff"
         android:onClick="OnClickLeaderBoard"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp" />
+        android:layout_below="@+id/Play_Button"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Spot the Difference"
-        android:id="@+id/textView4"
-        android:textSize="80px"
-        android:textColor="#ffffff"
-        android:layout_marginTop="62dp"
-        android:layout_below="@+id/frameLayout"
-        android:layout_centerHorizontal="true" />
+        android:text="State Farm"
+        android:id="@+id/textView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:textSize="90px"
+        android:textColor="#ffffff" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="The Video Game!"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:textSize="90px"
+        android:textColor="#ffffff" />
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="440dp"
+        android:keepScreenOn="true"
+        android:text="So far, your savings is \n$445"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </RelativeLayout>
