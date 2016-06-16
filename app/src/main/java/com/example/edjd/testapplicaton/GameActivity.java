@@ -48,11 +48,11 @@ public class GameActivity extends AppCompatActivity {
 
     public void setScore () {
         DataBaseWrapper mDbHelper = new DataBaseWrapper(getBaseContext());
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
         DataAccess da = new DataAccess();
-        Map<Long, String[]> scoreBoard = da.readScoreboard(db, "2016-06-15");
+        Map<Long, String[]> scoreBoard = da.readScoreboard(db);
         da.addScore(db, Long.valueOf(GameOverActivity.Score),Long.valueOf(4) );
-        scoreBoard = da.readScoreboard(db, "2016-06-15");
+        scoreBoard = da.readScoreboard(db);
     };
     public void goToGameOver () {
         startActivity(GameOver);
