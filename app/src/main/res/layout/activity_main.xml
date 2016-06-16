@@ -31,7 +31,8 @@
         android:textColor="#ffffff"
         android:onClick="OnClickGame"
         android:layout_above="@+id/Leaderboard_Button"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,9 +43,9 @@
         android:textSize="90px"
         android:textColor="#ffffff"
         android:onClick="OnClickLeaderBoard"
+        android:layout_marginBottom="38dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,8 +55,28 @@
         android:id="@+id/textView4"
         android:textSize="80px"
         android:textColor="#ffffff"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="32dp"
         android:layout_below="@+id/frameLayout"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/ballonspotthedifference"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton7"
+        android:src="@drawable/spyglass2"
+        android:layout_above="@+id/Leaderboard_Button"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_alignEnd="@+id/imageView3"
+        android:layout_alignTop="@+id/Play_Button"
+        android:onClick="OnClickSpyGlass" />
 
 </RelativeLayout>

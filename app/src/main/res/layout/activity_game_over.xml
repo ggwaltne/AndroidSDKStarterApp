@@ -70,7 +70,8 @@
             android:src="@drawable/rename"
             android:layout_alignTop="@+id/imageButton5"
             android:layout_toRightOf="@+id/imageButton5"
-            android:layout_toEndOf="@+id/imageButton5" />
+            android:layout_toEndOf="@+id/imageButton5"
+            android:onClick="OnClickHockey" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -80,7 +81,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/gameovertxt"
             android:layout_alignEnd="@+id/gameovertxt"
-            android:layout_marginBottom="55dp" />
+            android:layout_marginBottom="55dp"
+            android:onClick="OnClickSFAd" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -89,7 +91,9 @@
             android:src="@drawable/warrantylogo2"
             android:layout_alignBottom="@+id/imageButton5"
             android:layout_toRightOf="@+id/gameovertxt"
-            android:layout_toEndOf="@+id/gameovertxt" />
+            android:layout_toEndOf="@+id/gameovertxt"
+            android:onClick="OnClickAutoCare"
+            android:nestedScrollingEnabled="false" />
 
         <TextView
             android:layout_width="wrap_content"

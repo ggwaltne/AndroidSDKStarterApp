@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     public void OnClickGame(View view) {
         startActivity(Game);
     }
+    public void OnClickSpyGlass(View view) {
+        startActivity(Game);
+    }
 
     public void OnClickAd(View view) {
         startActivity(AdPage);
