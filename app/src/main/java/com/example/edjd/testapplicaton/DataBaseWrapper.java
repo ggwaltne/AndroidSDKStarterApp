@@ -5,6 +5,7 @@
 package com.example.edjd.testapplicaton;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -35,7 +36,19 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         this.dbTestBuild(db);
     }
+    public void onOpen(SQLiteDatabase db) {
+        this.dbDestroy(db);
+        this.dbTestBuild(db);
+    }
 
+    private void dbDestroy(SQLiteDatabase db){
+        String dropSQL;
+        String query = "select 'drop table ' || name || ';' from sqlite_master where type = 'table';";
+        Cursor results = db.rawQuery(query, null);
+        results.moveToFirst();
+        dropSQL = results.getString(0);
+        db.rawQuery(dropSQL, null);
+    }
     private void dbTestBuild(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USER);
         db.execSQL(SQL_CREATE_GAME);

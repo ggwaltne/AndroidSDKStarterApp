@@ -114,8 +114,8 @@ public class DataAccess {
             db.execSQL(SQL_DELETE_DATA);
     }
     public void dbInsertTestData(SQLiteDatabase db) {
-        db.execSQL(SQL_GENERATE_GAME);
         db.execSQL(SQL_GENERATE_USER);
+        db.execSQL(SQL_GENERATE_GAME);
         db.execSQL(SQL_GENERATE_SCORE);
     }
 }
