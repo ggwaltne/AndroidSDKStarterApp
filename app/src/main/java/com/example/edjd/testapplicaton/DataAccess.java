@@ -3,9 +3,7 @@ package com.example.edjd.testapplicaton;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.BaseColumns;
 
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedMap;
@@ -25,15 +23,17 @@ public class DataAccess {
         user_id = results.getLong(0);
         return user_id;
     }
-    public void addUser(SQLiteDatabase db, String user_name) {
+    public long addUser(SQLiteDatabase db, String user_name) {
+        long user_id = this.nextUserID(db);
         ContentValues user = new ContentValues();
-        user.put("user_id", this.nextListingID(db));
+        user.put("user_id", user_id);
         user.put("user_name", user_name);
         user.put("user_email", user_name+"@fake.it");
         user.put("user_create_date", "2016-06-15");
         user.put("user_verified_date", "2016-06-15");
         user.put("user_deactivated_date", "");
         db.insert("user", null, user);
+        return user_id;
     }
     private long nextListingID(SQLiteDatabase db) {
         long listing_id;
@@ -43,12 +43,14 @@ public class DataAccess {
         listing_id = results.getLong(0);
         return listing_id;
     }
-    public void addListing(SQLiteDatabase db, long advertisement_id) {
+    public long addListing(SQLiteDatabase db, long advertisement_id) {
+        long listing_id = this.nextListingID(db);
         ContentValues listing = new ContentValues();
-        listing.put("listing_id", this.nextListingID(db));
+        listing.put("listing_id", listing_id);
         listing.put("advertisement_id", advertisement_id);
         listing.put("listing_date", "2016-06-15");
         db.insert("listing", null, listing);
+        return listing_id;
     }
     private long nextClickID(SQLiteDatabase db) {
         long click_id;
@@ -58,12 +60,14 @@ public class DataAccess {
         click_id = results.getLong(0);
         return click_id;
     }
-    public void addClick(SQLiteDatabase db, long listing_id) {
+    public long addClick(SQLiteDatabase db, long listing_id) {
+        long click_id = this.nextClickID(db);
         ContentValues click = new ContentValues();
-        click.put("click_id", this.nextClickID(db));
+        click.put("click_id", click_id);
         click.put("advertisement_id", listing_id);
         click.put("listing_date", "2016-06-15");
         db.insert("click", null, click);
+        return click_id;
     }
     private long nextScoreID(SQLiteDatabase db) {
         long score_id;
@@ -73,13 +77,15 @@ public class DataAccess {
         score_id = results.getLong(0);
         return score_id;
     }
-    public void addScore(SQLiteDatabase db, long score_value, long user_id) {
+    public long addScore(SQLiteDatabase db, long score_value, long user_id) {
+        long score_id = this.nextScoreID(db);
         ContentValues score = new ContentValues();
-        score.put("score_id", this.nextScoreID(db));
+        score.put("score_id", score_id);
         score.put("game_id", "101");
         score.put("user_id", user_id);
         score.put("score_value", score_value);
         db.insert("score", null, score);
+        return score_id;
     }
     public Map readScoreboard(SQLiteDatabase db) {
         long rank=1;
