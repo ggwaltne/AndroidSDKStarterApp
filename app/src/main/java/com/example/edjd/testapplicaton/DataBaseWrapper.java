@@ -41,7 +41,7 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
     }
 
     private void dbDestroy(SQLiteDatabase db){
-        db.rawQuery(SQL_DROP, null);
+        db.execSQL(SQL_DROP, null);
     }
     private void dbBuild(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USER);
