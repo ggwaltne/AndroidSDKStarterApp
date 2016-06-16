@@ -67,5 +67,15 @@
         android:layout_centerHorizontal="true"
         android:textSize="90px"
         android:textColor="#ffffff" />
-
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="440dp"
+        android:keepScreenOn="true"
+        android:text="So far, your savings is \n$445"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </RelativeLayout>

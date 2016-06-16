@@ -22,7 +22,12 @@
             android:theme="@style/FullscreenTheme" />
         <activity android:name=".GameActivity" />
         <activity android:name=".GameOverActivity" />
-        <activity android:name=".VideoAdActivity"></activity>
+        <activity android:name=".VideoAdActivity" />
+        <activity
+            android:name=".YourSavingsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_your_savings"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>
