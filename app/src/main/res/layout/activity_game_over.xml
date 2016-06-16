@@ -9,7 +9,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#cc0717"
     tools:context="com.example.edjd.testapplicaton.GameOverActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/sflogo"
+            android:layout_gravity="bottom"/>
+    </FrameLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
