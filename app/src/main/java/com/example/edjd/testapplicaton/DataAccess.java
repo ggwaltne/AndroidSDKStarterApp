@@ -15,6 +15,8 @@ import java.util.TreeMap;
 
 public class DataAccess {
 
+    private static final String SQL_DELETE_DATA = "DELETE FROM user;DELETE FROM game; DELETE FROM score; DELETE FROM listing; DELETE FROM click;";
+
     private long nextUserID(SQLiteDatabase db) {
         long user_id;
         String query = "SELECT MAX(CAST(user_id AS integer)) + 1 FROM user;";
@@ -103,5 +105,8 @@ public class DataAccess {
             } while (results.moveToNext());
         }
         return scoreboard;
+    }
+    public void dbReset(SQLiteDatabase db){
+            db.execSQL(SQL_DELETE_DATA);
     }
 }
