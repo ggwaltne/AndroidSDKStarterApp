@@ -35,7 +35,7 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
     }
     public void onCreate(SQLiteDatabase db) {
         this.dbDestroy(db);
-        this.dbTestBuild(db);
+        this.dbBuild(db);
     }
 
     private void dbDestroy(SQLiteDatabase db){
@@ -46,7 +46,7 @@ public class DataBaseWrapper extends SQLiteOpenHelper {
         dropSQL = results.getString(0);
         db.rawQuery(dropSQL, null);
     }
-    private void dbTestBuild(SQLiteDatabase db) {
+    private void dbBuild(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USER);
         db.execSQL(SQL_CREATE_GAME);
         db.execSQL(SQL_CREATE_SCORE);
