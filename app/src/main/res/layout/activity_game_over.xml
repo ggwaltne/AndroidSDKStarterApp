@@ -80,5 +80,15 @@
             android:layout_toRightOf="@+id/gameovertxt"
             android:layout_toEndOf="@+id/gameovertxt" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0"
+            android:id="@+id/score"
+            android:layout_below="@+id/scoretxt"
+            android:layout_alignLeft="@+id/scoretxt"
+            android:layout_alignStart="@+id/scoretxt" />
+
     </RelativeLayout>
 </RelativeLayout>

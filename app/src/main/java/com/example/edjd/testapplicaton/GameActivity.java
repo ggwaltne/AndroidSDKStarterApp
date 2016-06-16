@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.Map;
 
 public class GameActivity extends AppCompatActivity {
     Intent GameOver;
@@ -15,7 +16,9 @@ public class GameActivity extends AppCompatActivity {
     int maxDifferences = 3;
     Calendar calendar;
     int seconds;
+
     TextView score;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +47,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void setScore () {
-       // addScore(db, score_value, user_id);
+        DataBaseWrapper mDbHelper = new DataBaseWrapper(getBaseContext());
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        DataAccess da = new DataAccess();
+        Map<Long, String[]> scoreBoard = da.readScoreboard(db, "2016-06-15");
+        da.addScore(db, Long.valueOf(GameOverActivity.Score),Long.valueOf(4) );
+        scoreBoard = da.readScoreboard(db, "2016-06-15");
     };
     public void goToGameOver () {
         startActivity(GameOver);
